@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 async function main() {
     try {
         app.listen(PORT, () => {
-            console.log('PRUEBA DE ESCUCHA');
+            console.log('PRUEBA DE ESCUCHA API');
         });
     } catch (error) {
         console.error('Error al iniciar el servidor:', error);
