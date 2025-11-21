@@ -28,7 +28,7 @@ class AuthService {
                 throw new Error('Contraseña incorrecta');
             }
 
-            // Generar token JWT
+            // Generar token
             const token = jwt.sign(
                 {
                     id_usuario: user.id_usuario,

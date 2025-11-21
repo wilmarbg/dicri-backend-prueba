@@ -60,7 +60,6 @@ class AuthController {
     // Verificar token
     async verifyToken(req, res) {
         try {
-            // Si llegó aquí, el token es válido (ya pasó por el middleware)
             return ResponseHandler.success(
                 res,
                 { valid: true, user: req.user },

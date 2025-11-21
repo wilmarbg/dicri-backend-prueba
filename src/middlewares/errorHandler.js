@@ -10,7 +10,7 @@ const errorHandler = (err, req, res, next) => {
         method: req.method
     });
 
-    // Error de validación de express-validator
+    // Error de validación de express validator
     if (err.name === 'ValidationError') {
         return ResponseHandler.validationError(res, err.errors);
     }
@@ -25,7 +25,7 @@ const errorHandler = (err, req, res, next) => {
         );
     }
 
-    // Error de JWT
+    // Error de token
     if (err.name === 'JsonWebTokenError') {
         return ResponseHandler.error(res, 'Token inválido', 401);
     }

@@ -68,7 +68,6 @@ const expedienteIdParamValidation = [
         .isInt({ min: 1 }).withMessage('ID de expediente debe ser un número entero positivo')
 ];
 
-// Todas las rutas requieren autenticación
 router.use(verifyToken);
 
 // Obtener tipos de indicio (catálogo)

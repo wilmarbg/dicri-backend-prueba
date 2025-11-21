@@ -2,12 +2,12 @@ const jwt = require('jsonwebtoken');
 const ResponseHandler = require('../utils/responseHandler');
 const Logger = require('../utils/logger');
 
-// Verificar token JWT
+// Verificar token
 const verifyToken = (req, res, next) => {
     try {
         // Obtener token del header
         const authHeader = req.headers['authorization'];
-        const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+        const token = authHeader && authHeader.split(' ')[1];
 
         if (!token) {
             return ResponseHandler.error(
@@ -38,7 +38,7 @@ const verifyToken = (req, res, next) => {
     }
 };
 
-// Verificar rol específico
+// Verificar rol
 const verifyRole = (...allowedRoles) => {
     return (req, res, next) => {
         if (!req.user) {
@@ -69,13 +69,8 @@ const verifyRole = (...allowedRoles) => {
     };
 };
 
-// Verificar si es técnico
 const isTecnico = verifyRole('Tecnico', 'Coordinador', 'Administrador');
-
-// Verificar si es coordinador
 const isCoordinador = verifyRole('Coordinador', 'Administrador');
-
-// Verificar si es administrador
 const isAdmin = verifyRole('Administrador');
 
 module.exports = {

@@ -27,7 +27,7 @@ const revisarExpedienteValidation = [
         const idParamValidation = [
         param('id').isInt({ min: 1 }).withMessage('ID debe ser un número entero positivo')
         ];
-        // Todas las rutas requieren autenticación
+
 router.use(verifyToken);
 // Rutas para técnicos y superiores
 /**

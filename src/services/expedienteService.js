@@ -96,7 +96,7 @@ class ExpedienteService {
         }
     }
 
-    // Revisar expediente (Aprobar/Rechazar)
+    // Revisar expediente Aprobar y Rechazar
     async revisarExpediente(data) {
         try {
             const pool = await getConnection();
@@ -120,8 +120,6 @@ class ExpedienteService {
         try {
             const pool = await getConnection();
             const result = await pool.request().execute('sp_ObtenerEstadisticas');
-
-            // Transformar resultado en objeto
             const stats = {};
             result.recordset.forEach(row => {
                 stats[row.metrica] = row.valor;
